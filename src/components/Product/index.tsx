@@ -1,46 +1,45 @@
-import React, { useEffect, useState } from 'react';
 import * as S from './Product.style'
-import api from '../../services/api'
 
-interface Product {
+export interface IProduct {
     id: number;
     name: string;
-    price: string;
+    price: number;
     imageUrl: string;
+    additionalInfo: {
+        brandName: string;
+    }
 }
 
-const Product = () => {
-    const [Products, setProducts] = useState<Product[]>([]);
+interface Iprops {
+    products: IProduct[];
+}
 
-    useEffect(() => {
-        async function fetchProducts() {
-            const { data } = await api.get('items');
-            setProducts([
-                ...data
-            ]);
-        }
-        fetchProducts();
+const Product = ({ products }: Iprops) => {
 
-    }, []);
-
+    function priceFormated(value:number){
+        return (value / 100).toString().replace(".", ",")
+    
+    }
     return (
         <S.Container>
-            { Products?.map((product) => (
-                <S.Card key={product.id}>
-                    <S.Image>
-                        <img
-                            src={product.imageUrl}
-                            alt=""
-                            width='100%'
-                            height='100%'
-                        />
-                    </S.Image>
-                    <S.Description>
-                        <S.ProductName>{product.name}</S.ProductName>
-                        <S.UnitPrice>{product.price}</S.UnitPrice>
-                        <S.TotalPrice>R$ 1,23</S.TotalPrice>
-                    </S.Description>
-                </S.Card>))}
+            {  products.length > 0 &&
+                products.map((product) => (
+                    <S.Card key={product.id}>
+                        <S.Image>
+                            <img
+                                src={product.imageUrl}
+                                alt=""
+                                width='100%'
+                                height='100%'
+                            />
+                        </S.Image>
+                        <S.Description>
+                            <S.ProductName>{product.name}</S.ProductName>
+                            <S.UnitPrice>R$  { priceFormated(product.price)}</S.UnitPrice>
+                            <S.TotalPrice>R$ { priceFormated(product.price)}</S.TotalPrice>
+                            <S.ProductBrand>{product.additionalInfo.brandName}</S.ProductBrand>
+                        </S.Description>
+                    </S.Card>))}
         </S.Container>
 
 
