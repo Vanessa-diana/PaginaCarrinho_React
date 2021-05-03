@@ -40,6 +40,11 @@ const Product = ({ products }: Iprops) => {
                             <S.ProductBrand>{product.additionalInfo.brandName}</S.ProductBrand>
                         </S.Description>
                     </S.Card>))}
+                    <S.Total>Total</S.Total>
+                    <S.Value>R$ 10,00</S.Value>
+                    <S.ShippingFree>
+                        Parabéns,sua compra tem frete grátis
+                    </S.ShippingFree>
         </S.Container>
 
 

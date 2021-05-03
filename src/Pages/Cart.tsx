@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Container from '../components/Container';
 import Product from '../components/Product';
-import Title from '../components/Title';
+import Header from '../components/Header';
 import api from '../services/api';
+import Footer from '../components/Footer';
 
 
 interface IProduct {
@@ -33,13 +33,16 @@ const Cart = () => {
     return (
 
         <React.Fragment>
-            <Title />
-            <Container>
-                <Product products={products}/>
-            </Container>
+            <Header />
+   
+                <Product products={products} />
+    
+ 
+            <Footer />
         </React.Fragment>
 
-)};
+    )
+};
 
 
 export default Cart;
