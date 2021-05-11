@@ -53,17 +53,17 @@ export const ProductBrand = styled.span`
     font-weight: bold;
     text-transform: lowercase;
 `
-export const Total = styled.span`
-    font-size: 18px;
-    justify-content: flex-start;
-    font-weight: bold;
-    width: 50%;
-    padding-bottom: 16px;
-`;
-
-export const Value = styled(Total)`
+export const Value = styled.span`
     display:flex;
+    font-size: 1rem;
     justify-content: flex-end;
+    width: 100%;
+    padding: 5px 10px;
+
+    strong {
+        padding: 0 10px;
+        font-size: 0.8rem;
+    }
 `;
 
 export const ShippingFree = styled.span`
