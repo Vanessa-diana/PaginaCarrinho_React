@@ -1,11 +1,11 @@
 import React from 'react';
 import * as S from './Button.style'
 
-interface IButtom {
+interface IButton {
     title: string
 }
 
-const Button = ({ title }: IButtom) => (
+const Button = ({ title }: IButton) => (
     <S.Button>{title}</S.Button>
 
 )

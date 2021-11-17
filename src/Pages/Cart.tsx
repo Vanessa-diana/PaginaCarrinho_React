@@ -34,10 +34,7 @@ const Cart = () => {
 
         <React.Fragment>
             <Header />
-   
-                <Product products={products} />
-    
- 
+            <Product products={products} />
             <Footer />
         </React.Fragment>
 

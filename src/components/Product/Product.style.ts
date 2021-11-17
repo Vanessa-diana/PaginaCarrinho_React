@@ -52,17 +52,25 @@ export const ProductBrand = styled.span`
     font-size: 14px;
     font-weight: bold;
     text-transform: lowercase;
-`
+`;
+
+export const BoxValue = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding:0 16px;
+`;
+
 export const Value = styled.span`
     display:flex;
     font-size: 1rem;
-    justify-content: flex-end;
     width: 100%;
     padding: 5px 10px;
+    justify-content: flex-end;
 
     strong {
-        padding: 0 10px;
         font-size: 0.8rem;
+        padding-left: 10px;
     }
 `;
 
@@ -77,5 +85,4 @@ export const ShippingFree = styled.span`
     justify-content: center;
     margin: 10px 24px;
     font-weight: 600;
-  
 `;
